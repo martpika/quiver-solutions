@@ -1,0 +1,49 @@
+// To be used as a pipe to import dependencies for styling
+@use "homepage";
+@use "general";
+@use "variables";
+@use "services";
+@use "why_quiver";
+
+// Add HTML Presets
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Open Sans', arial, sans-serif;
+  margin: 0 auto;
+  max-width: 103.125rem;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-family: 'Roboto', arial, sans-serif;
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  font-family: Verdana, Geneva, sans-serif;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,24 @@
+@use "variables";
+@use "extensions";
+
+.why_quiver_backdrop img{
+    position: absolute;
+}
+
+.why_quiver {
+    height: 34rem;
+
+    h1, h2 {
+        color: variables.$clr-light-3;
+    }
+    h1 {
+        font-size: 1.75rem;
+        font-weight: thin;
+        margin-top: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+}

@@ -1,0 +1,337 @@
+@use "variables";
+@use "extensions";
+
+
+// Primary
+
+.service_landing {
+    @extend %flex-between-row;
+    background-color: #f7f6ff;
+    gap: 0 1rem;
+    height: 27.5rem;
+    overflow: hidden;
+    padding-left: 8rem;
+    width: 100%;
+
+    &__container {
+        flex: 0 1 50%;
+        position: relative;
+    }
+
+    &__container:nth-of-type(1) {
+        padding: 5rem 0 2rem;
+    }
+
+    &__frame {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 110%;
+        z-index: 10;
+    }
+
+    .landing_hero,
+    .landing_text {
+        color: variables.$clr-dark-3;
+        margin: 0 0 2rem;
+        position: relative;
+        z-index: 15;
+    }
+
+    .landing_hero {
+        font-size: clamp(3rem, 4.5vw, 3.5rem);
+    }
+    
+    .landing_image {
+        height: 100%;
+        left: -5rem;
+        position: absolute;
+        top: 0;
+        width: 120%;
+    }
+}
+
+.service_overview {
+    padding: 0 0 10rem
+}
+
+.current_links {
+    @extend %divider-container;
+    background-color: variables.$clr-light-1;
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+    color: variables.$clr-dark-3;
+    position: sticky;
+    top: 4.65rem;
+    z-index: 10;
+}
+
+.current_link {
+    color: variables.$clr-dark-3;
+    position: relative;
+}
+
+.current_link:not(:nth-of-type(1)) {
+    margin-left: 3.5rem;
+}
+
+.current_link:not(:nth-of-type(1))::after {
+    content: url("../app/images/vectors/arrow-right.png");
+    left: -2rem;
+    position: absolute;
+}
+
+.current_links_mbl {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 1.25rem 2rem;
+}
+
+.current_links_mbl a {
+    color: variables.$clr-dark-3;
+}
+
+.service_carousel {
+    box-shadow: 1px 10px 10px rgb(0 0 0 / 10%);
+    display: none;
+    overflow: initial;
+
+    #carousel-prev,
+    &:hover #carousel-prev {
+        left: 2rem;
+    }
+
+    #carousel-next,
+    &:hover #carousel-next {
+        right: 2rem;
+    }
+
+    .carousel_overlay {
+        overflow: initial;
+    }
+
+    &__inner {
+        width: 400%;
+    }
+
+    &__slide {
+        @include extensions.flex-center-all;
+        background-color: variables.$clr-light-1;
+        height: 3.75rem;
+        position: relative;
+        width: 25%;
+    }
+
+    &__dropdown summary {
+        outline: none;
+    }
+
+    &__container {
+        @extend %ul-clear;
+        background-color: #6c6c6c;
+        gap: 1rem 0;
+        justify-content: space-between;
+        left: 0;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+    }
+
+    &__link {
+        width: 45%;
+    }
+
+    &__link a {
+        color: variables.$clr-light-2;
+    }
+
+}
+
+.service_container {
+    @extend %flex-between-row;
+    align-items: flex-start;
+    gap: 0 1.5rem;
+    padding: 0 6rem 0 0;
+}
+
+.service_sidebar {
+    box-shadow: -3px 9px 13px rgba(160, 159, 212, 0.40);
+    flex: 0 1 17.5rem;
+    height: 25rem;
+    overflow-y: scroll;
+    padding: 3rem 1.5rem 3rem 6rem;
+    position: sticky;
+    scrollbar-width: none;
+    top: 8.75rem;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__block {
+        margin-bottom: 2rem;
+    }
+
+    &__block summary{
+        outline: none;
+    }
+
+    &__block summary,
+    &__block a,
+    &__heading,
+    &__dropdown {
+        color: variables.$main-clr;
+    }
+
+    &__block a {
+        font-family: 'Roboto', arial, sans-serif;
+    }
+
+    &__heading {
+        font-weight: 500;
+    }
+
+    &__dropdown {
+        @extend %ul-clear;
+        font-family: inherit;
+        font-weight: 400;
+        padding: 1rem 0 1rem 1.5rem;
+    }
+
+    &__link + &__link {
+        margin-top: 0.5rem;
+    }
+}
+
+.service_blog {
+    flex: 0 1 41.25rem;
+    padding: 3rem 0;
+
+    &__title {
+        display: block;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    &__article {
+        line-height: 2.25rem;
+    }
+}
+
+.service_article {
+    box-shadow: -3px 9px 13px rgba(160, 159, 212, 0.4);
+    flex: 0 1 17.5rem;
+    margin-top: 3rem;
+
+    &__punch {
+        background-color: variables.$clr-dark-5;
+        color: variables.$clr-light-2;
+        font-size: 1.125rem;
+        padding: 0.375rem 0 1rem 1rem;
+    }
+
+    &__block {
+        padding: 0.75rem 2rem 1rem 1rem;
+    }
+
+    &__title {
+        font-size: 1rem;   
+    }
+
+    &__title,
+    &__info {
+        color: variables.$clr-dark-2;
+        margin-bottom: 0.5rem;
+    }
+
+    &__info {
+        font-size: 0.9rem;
+    }
+}
+
+// Secondary
+
+// Media Breakpoints
+
+@media (max-width: 1000px) {
+
+    .service_landing {
+        background: url("../app/images/quiver info/services-bg-1000px.png") no-repeat center;
+        background-size: cover;
+        display: block;
+        height: auto;
+        padding: 0 8rem;
+
+        &__frame {
+            display: none;
+        }
+
+        &__container:nth-of-type(2) {
+            display: none;
+        }
+
+        .landing_hero,
+        .landing_text {
+            color: variables.$clr-light-1;
+        }
+    }
+
+
+    .current_links {
+        top: 0;
+    }
+
+    .service_sidebar {
+        top: 3.75rem;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .service_landing {
+        padding: 0 2rem 4rem;
+        text-align: center;
+
+        &__container:nth-of-type(1) {
+            padding: 1rem 0 0;
+        }
+    }
+
+    .current_links {
+        display: none;
+    }
+
+    .current_links_mbl {
+        display: flex;
+    }
+
+    .service_container {
+        display: block;
+        padding: 0 2rem;
+    }
+
+    .service_sidebar {
+        display: none;
+    }
+
+    .service_blog {
+        padding: 2rem 0;
+
+        &__article {
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+
+        &__title {
+            font-size: 1.125rem;
+        }
+    }
+
+    .service_article {
+        margin-top: 0;
+    }
+
+    .service_carousel {
+        display: block;
+    }
+}

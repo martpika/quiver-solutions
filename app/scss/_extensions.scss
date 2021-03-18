@@ -1,0 +1,69 @@
+@use "variables";
+
+
+// Extend
+// Containers
+%container-100 {
+    position: relative;
+    width: 100%
+}
+
+%ul-clear {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%divider-container {
+    display: flex;
+    height: 3.75rem;
+    padding: 1.25rem 8rem;
+}
+
+// Flex
+%flex-between-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// Buttons
+%bdr-button {
+    border-radius: 3px;
+    padding: 0.625rem 0.75rem;
+}
+
+%overflow-button {
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+// States 
+%show-item {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+%hide-item {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+// Mixins
+@mixin show-item {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@mixin flex-center-col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center-all {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

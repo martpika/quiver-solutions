@@ -1,0 +1,567 @@
+@use "variables";
+@use "extensions";
+
+
+// Primary
+.homepage_landing {
+    @extend %container-100;
+    height: 43.75rem;
+    position: absolute;
+}
+
+.sidebar {
+    @include extensions.flex-center-col;
+    background-color: variables.$clr-dark-3;
+    height: 100%;
+    padding: 6.625rem 0 2rem;
+    position: absolute;
+    width: 6.25rem;
+    z-index: 30;
+
+    &__text {
+        color: variables.$clr-light-6;
+        font-size: 0.75rem;
+        margin: 0 0 1rem;
+        word-break: break-all;
+        width: 0.2rem;
+    }
+
+    &__divider {
+        background-color: variables.$clr-dark-5;
+        height: 2rem;
+        margin: 1.75rem 0;
+        width: 1px;
+    }
+
+    &__icon {
+        color: variables.$main-clr;
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        transition: transform .2s ease-in;
+    }
+
+    &__icon:hover {
+        transform: scale(1.1);
+    }
+}
+
+.landing_button {
+    @extend %overflow-button;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: variables.$clr-light-3;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.landing_button:hover .hover_text {
+    color: #000000;
+}
+
+.landing_button:hover .hover_color {
+    background-color: white;
+    transform: scaleX(1);
+}
+
+.landing_arrow_down {
+    display: inline-block;
+    margin-bottom: 2.5rem;
+}
+
+.feature {
+    padding: 4rem 8rem !important;
+    z-index: 35;
+
+    &__banner {
+        color: variables.$clr-light-1;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    &__banner .quiver-tag {
+        bottom: -17rem;
+    }
+
+    &__banner::before {
+        content: "";
+        background-color: variables.$clr-dark-6;
+        height: 28.75rem;
+        left: 50%;
+        position: absolute;
+        top: 3rem;
+        width: 1px;
+    }
+
+    &__banner:nth-of-type(2)::before,
+    &__banner:nth-of-type(2)::after {
+        display: none;
+    }
+
+    &__overlay {
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-bottom: 7rem;
+        padding: 3rem 0;
+    }
+
+    &__block {
+        padding: 0 4.875rem;
+        text-align: left;
+    }
+
+    &__title,
+    &__overview,
+    &__service_icon,
+    &__service_title {
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        color: variables.$clr-light-5;
+        font-size: 1.5rem;
+    }
+
+    &__overview {
+        color: variables.$clr-light-3;
+        font-size: 1.75rem;
+    }
+
+    &__link {
+        margin-bottom: 2rem;
+    }
+
+    &__service_container {
+        gap: 0.5rem 1.25rem;
+    }
+
+    &__service {
+        background-color: rgba(42, 42, 42, 0.8);
+        border-radius: 3px;
+        display: block;
+        padding: 1rem;
+    }
+
+    &__service:nth-of-type(1) {
+        background: linear-gradient(to bottom, rgba(86, 102, 88, 0.8), rgba(102, 130, 105, 0.8));
+    }
+
+    &__service_title {
+        color: variables.$clr-light-2;
+        font-size: 1.25rem;
+    }
+
+    &__service_description {
+        color: variables.$clr-light-6;
+        font-family: 'Open Sans', arial, sans-serif;
+        line-height: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.branding {
+    padding: 6.5rem 0;
+
+    &__banner {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 8rem;
+        position: relative;
+    }
+
+    &__line {
+        background-color: rgba(112, 112, 112, 0.5);
+        left: 50%;
+        height: 69rem;
+        position: absolute;
+        top: 150%;
+        width: 1px;
+    }
+
+    &__line .quiver-tag:nth-of-type(1) {
+        top: 22rem
+    }
+
+    &__line .quiver-tag:nth-of-type(2) {
+        top: 55rem;
+    }
+
+    &__block {
+        @extend %flex-between-row;
+        align-items: center;
+        gap: 0 5.625rem;
+        margin-bottom: 6rem;
+        padding-right: 8rem;
+    }
+
+    &__block:nth-of-type(2) {
+        padding: 0 0 0 8rem;
+    }
+
+    &__image {
+        width: clamp(30rem, 46vw, 38.75rem);
+    }
+
+    &__description {
+        max-width: 34rem;
+    }
+
+    &__title,
+    &__info,
+    &__link {
+        margin-bottom: 1.75rem;
+    }
+
+    &__title {
+        color: variables.$clr-dark-2;
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    &__info {
+        color: variables.$clr-dark-3;
+        line-height: 1.75rem;
+    }
+}
+
+.testimonial {
+    @extend %flex-between-row;
+    background: url("../app/images/photo/testimonial overlay.png");
+    padding: 6rem 8rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        border: 1.2rem solid transparent;
+        border-top-color: #ffffff;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    &__block {
+        @include extensions.flex-center-all;
+        border-right: 1px solid rgba(112, 112, 112, 0.5);
+        flex: 0 1 23.75rem;
+    }
+
+    &__punch {
+        color: variables.$clr-light-2;
+        font-size: 1.75rem;
+    }
+
+    &__carousel {
+        width: 38rem;
+    }
+
+    &__inner {
+        width: 400%;
+    }
+
+    &__slide {
+        background-color: rgba(65, 65, 65, 0.5);
+        border-radius: 0.5rem;
+        padding: 3.5rem 2rem;
+        width: 25%;
+    }
+
+    &__quote {
+        color: variables.$clr-light-6;
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__persona {
+        @include extensions.flex-center-all;
+        justify-content: flex-start;
+    }
+
+    &__icon {
+        margin-right: 1.25rem;
+    }
+
+    &__name {
+        color: variables.$clr-light-2;
+        font-size: 1.25rem;
+    }
+
+    &__pos {
+        color: rgba(241, 245, 241, 0.5);
+    }
+}
+
+.cta {
+    background-color: rgb(238, 238, 238);
+    padding: 8rem;
+
+    &__headline:nth-of-type(1) {
+        font-size: 2.5rem;
+    }
+
+    &__headline:nth-of-type(2) {
+        font-size: 3rem;
+        margin-bottom: 6rem;
+    }
+
+    &__catalog {
+        gap: 1.875rem;
+    }
+
+    &__block {
+        background-color: rgb(37, 44, 64);
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+    }
+
+    &__block:nth-of-type(1) {
+        background-color: variables.$clr-blue-1;
+    }
+
+    &__block:nth-of-type(1) h3::after {
+        content: url("../app/images/vectors/icon-search-icon.png");
+    }
+
+    &__block:nth-of-type(2) h3::after {
+        content: url("../app/images/vectors/icon-thumbs up.png");
+    }
+
+    &__block:nth-of-type(3) h3::after {
+        content: url("../app/images/vectors/icon-question.png");
+    }
+
+    &__title {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        color: variables.$clr-light-1;
+        margin-bottom: 1.25rem;
+        position: relative;
+    }
+
+    &__title::after {
+        left: -1.7rem;
+        position: absolute;
+    }
+
+    &__info {
+        color: rgb(206, 206, 206);
+        line-height: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__link {
+        color: variables.$clr-light-1 !important;
+    }
+
+}
+
+
+// Secondary
+.backdrop {
+    height: 100%;
+    max-width: 1650px;
+    position: absolute;
+    width: 100%;
+}
+
+
+// Medias
+@media (max-width: 1000px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .landing_arrow_down {
+        margin-bottom: 3rem;
+    }
+
+    .feature {
+
+        &__banner::before,
+        &__banner::after {
+            display: none;
+        }
+
+        &__block {
+            text-align: center;
+        }
+
+        &__service_container {
+            gap: 0.5rem;
+        }
+
+        &__service {
+            flex: 0 0 48% !important;
+        }
+    }
+
+    .branding {
+
+        &__banner {
+            margin-bottom: 4rem;
+        }
+
+        &__line {
+            display: none;
+        }
+
+        &__block {
+            justify-content: center;
+            padding: 0 8rem !important;
+        }
+
+        &__block:nth-of-type(1) {
+            flex-direction: column-reverse;
+        }
+
+        &__image {
+            width: 100%;
+        }
+    }
+
+    .testimonial {
+        justify-content: center;
+        text-align: center;
+
+        &__block {
+            border-right: none;
+            margin-bottom: 2rem;
+        }
+
+        &__carousel {
+            width: 30rem;
+        }
+
+        &__persona {
+            justify-content: center;
+        }
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .landing_button {
+        margin-bottom: 4rem;
+    }
+
+    .feature {
+        padding: 5rem 2rem !important;
+
+        &__banner {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__overlay {
+            margin-bottom: 5rem;
+            padding: 1.5rem 0 0;
+        }
+
+        &__block {
+            padding: 0 0.5rem;
+        }
+
+        &__overview {
+            font-size: 1.5rem;
+        }
+
+        &__service_container {
+            gap: 1.75rem 0;
+            padding: 0 1rem;
+        }
+
+        &__service {
+            flex: 0 0 100% !important;
+        }
+
+        &__service_icon {
+            margin-bottom: 0.5rem;
+        }
+
+        &__service_title {
+            margin-bottom: 0.5rem;
+        }
+
+        &__service_description {
+            margin-bottom: 0;
+        }
+    }
+
+    .branding {
+        padding: 5rem 0 0;
+
+        &__banner {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__block {
+            padding: 0 !important;
+        }
+
+        &__block:nth-of-type(1) &__image {
+            padding-right: 1rem;
+        }
+
+        &__block:nth-of-type(2) &__image {
+            padding-left: 1rem;
+        }
+
+        &__description {
+            max-width: 100%;
+            padding: 0 2rem !important;
+        }
+
+        &__title {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+
+        &__title,
+        &__info,
+        &__link {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .testimonial {
+        flex-wrap: wrap;
+        padding: 2rem 2rem 6rem;
+
+        &::before {
+            border-width: 0.5rem;
+        }
+
+        &__carousel {
+            width: 100%;
+        }
+
+        &__slide {
+            padding: 3rem 1rem;
+        }
+
+        &__quote {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        &__persona {
+            text-align: left;
+        }
+    }
+
+    .cta {
+        padding: 5rem 2rem 4rem;
+
+        &__headline:nth-of-type(1) {
+            font-size: 1.75rem;
+        }
+
+        &__headline:nth-of-type(2) {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+}
